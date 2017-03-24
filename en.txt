@@ -1,0 +1,123 @@
+Structural design: 
+==================
+
+
+All objects are TAObj.
+
+
+We distinguish qualitatively (they describe data from different sets)different entities: 
+. types
+. values
+. terms
+.
+ formulae
+
+We also distinguish two structurally different entities:
+ 
+. arrays
+. pairs
+
+Types are either 
+.
+ primitive: bool, int, double
+. 
+composite: array of, pair of 
+
+Values are 
+.
+ primitive: bool, int, double
+
+Terms are 
+. 
+Primitive variables
+. 
+Unary operators: 
+  . term --> term : minus
+  . pair --> term : .first, .second
+. 
+Binary operators: 
+  . term,term --> term : plus, minus, times, division, remainder
+  .
+ array,term --> term: array access
+. 
+Ternary operators: conditional
+
+Formulae are
+. 
+Primitive variables
+. Unary operators: 
+  . formula --> formula: negation
+  . pair --> formula: .first, .second
+.
+ Binary operators: 
+  . formula,formula --> formula: and, or, xor, implies
+  . array,term --> formula: array access
+.
+ Ternary operators: conditional 
+
+arrays are
+. base arrays
+.
+ unary: pair --> array: .first, .second 
+. 
+binary: array --> array: 
+array access
+
+
+pairs are
+. base pairs 
+.
+ unary: pair --> pair: .first, .second 
+.
+ binary: array --> pair: 
+array access
+
+A Unary operator has one operand
+A
+ Binary operator has two operands
+A
+ ternary operator has three operands
+ 
+
+All objects have unique ids.
+ 
+All objects have types. 
+
+Terms have values. 
+
+Primitive variables are named objects. 
+
+Arrays are named objects.
+ 
+Pairs are named objects. 
+
+A named object has a name.
+ 
+
+Functional design:
+==================
+
+
+Stakeholders should be able to :
+
+. construct terms
+
+. list terms
+
+. set values of primitive terms
+
+. evaluate terms
+
+. list state of terms
+
+
+Constructors:
+=============
+
+
+List:
+=====
+
+
+Evaluate:
+=========
